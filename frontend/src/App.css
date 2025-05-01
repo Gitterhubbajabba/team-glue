@@ -46,6 +46,7 @@ body {
   justify-content: space-between;
   background-color: #000000;
   transition: opacity 0.8s ease, transform 0.8s ease;
+  padding: 0;
 }
 
 .top-banner.fade-out {
@@ -53,29 +54,38 @@ body {
   transform: translateY(-100%);
 }
 
+.banner-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .banner-section {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 0 20px;
   width: 33.33%;
+  padding: 10px 0;
 }
 
 .banner-left {
   text-align: left;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .banner-center {
   text-align: center;
-  justify-content: center;
-  display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .banner-right {
   text-align: right;
+  align-items: flex-end;
   justify-content: center;
 }
 
@@ -88,10 +98,18 @@ body {
 
 .name {
   font-size: 48px;
+  line-height: 1;
+  margin-bottom: 5px;
 }
 
 .id {
   font-size: 24px;
+  line-height: 1;
+}
+
+.view-text {
+  font-size: 36px;
+  line-height: 1;
 }
 
 /* Main content */
@@ -101,13 +119,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 /* Middle box styling - for forms and content containers */
 .middle-box {
   width: 100%;
   max-width: 500px;
-  background: rgba(0, 0, 0, 0);
+  background-color: #000000;
   border: none;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
   padding: 40px;
@@ -118,7 +137,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  background-color: #000000;
   transition: all 0.3s ease;
 }
 
@@ -186,6 +204,7 @@ body {
   align-items: center;
   font-family: 'VT323', monospace;
   margin-top: auto;
+  padding: 0;
 }
 
 .footer-section {
@@ -335,7 +354,6 @@ body {
   margin-bottom: 30px;
 }
 
-
 .member-info {
   width: 100%;
   text-align: left;
@@ -356,4 +374,48 @@ body {
 
 .info-value {
   font-size: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .name {
+    font-size: 36px;
+  }
+  
+  .id {
+    font-size: 18px;
+  }
+  
+  .box-title {
+    font-size: 32px;
+  }
+  
+  .button {
+    font-size: 24px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-banner {
+    height: 70px;
+  }
+  
+  .name {
+    font-size: 28px;
+  }
+  
+  .id {
+    font-size: 14px;
+  }
+  
+  .buttons-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .button {
+    width: 100%;
+    font-size: 20px;
+  }
 }
